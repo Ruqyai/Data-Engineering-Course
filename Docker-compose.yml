@@ -1,0 +1,99 @@
+version: "2"
+
+services:
+#================zookeeper===============
+  zookeeper:
+    user: root
+    image: docker.io/bitnami/zookeeper:3.7
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    volumes:
+      - ./sys/zookeeper_data:/bitnami
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    hostname: zookeeper
+    networks: 
+      - network
+#================kafka===============
+  kafka:
+    user: root
+    image: docker.io/bitnami/kafka:3
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    volumes:
+      - ./sys/kafka_data:/bitnami
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    depends_on:
+      - zookeeper
+    hostname: kafka
+    networks: 
+      - network
+#================mongo===============
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    environment: 
+      MONGO_INITDB_DATABASE: Tuwaiq
+    ports:
+      - 27017:27017
+    volumes: 
+      - ./sys/db:/data/db
+    networks: 
+      - network
+#================mongo-express===============  
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongodb 
+    networks: 
+      - network
+#============dashboard using flask and plotly dash===============
+  dashboard:
+    build: .
+    image: dash_app
+    container_name: dashboard
+    volumes:
+      - ./app:/app
+    ports:
+      - "8080:80"
+    networks: 
+      - network
+#================metabase===============
+  metabase:
+    volumes:
+      - ./sys/metabase:/metabase
+      - ./sys/metabase-data:/metabase-data
+    ports:
+      - 3000:3000
+    image: metabase/metabase
+    #image: gregory/metabase
+    container_name: metabase
+    restart: always
+    networks: 
+      - network
+
+#================jupyter===============
+  jupyter:
+      volumes:
+        - ./spark:/home/jovyan/work
+      ports:
+        - 10100:8888
+      image: jupyter/pyspark-notebook
+      #image: jupyter/datascience-notebook
+      container_name: jupyter
+      restart: always
+      networks: 
+        - network
+#===================================== 
+networks:
+  network:
+    name: network

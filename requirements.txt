@@ -1,0 +1,16 @@
+
+tweepy==3.10.0
+kafka-python==2.0.2
+pykafka==2.8.0
+python-twitter==3.5
+python-dotenv==0.20.0
+plotly==5.10.0
+pandas==1.1.5
+pymongo==4.1.1
+textblob==0.17.1
+dash==1.9.0
+dash-bootstrap-components==0.12.0 
+dash-core-components==1.8.0 
+dash-html-components==1.0.2 
+dash-renderer==1.2.4
+#dash-table
