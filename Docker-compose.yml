@@ -84,7 +84,7 @@ services:
 #================jupyter===============
   jupyter:
       volumes:
-        - ./spark:/home/jovyan/work
+        - ./Jupyter:/home/jovyan/work
       ports:
         - 10100:8888
       image: jupyter/pyspark-notebook
