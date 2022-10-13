@@ -9,7 +9,7 @@
     <tr>
         <td class="tg-yw4l"> Day#1 </td>
         <td class="tg-yw4l"> <a href="https://bit.ly/DE_Slide1">Slides</a> </td>
-        <td class="tg-yw4l">
+        <td class="tg-yw4l"> <a href="https://github.com/Ruqyai/Tuwaiq_Academy/blob/main/Docker-compose.yml"> Run Jupyter Docker image </a> or
             <a href="https://github.com/Ruqyai/Tuwaiq_Academy/blob/main/Jupyter/Colab/PySpark_On_Colab.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg">
             </a>
@@ -33,7 +33,7 @@
     <tr>
         <td class="tg-yw4l"> Day#3 </td>
         <td class="tg-yw4l"><a href="https://bit.ly/3CdN6GL"> Slides </a></td>
-        <td class="tg-yw4l"><a href="https://github.com/Ruqyai/Tuwaiq_Academy/blob/main/Docker-compose.yml"> Project on Docker</a> or 
+        <td class="tg-yw4l"><a href="https://github.com/Ruqyai/Tuwaiq_Academy/blob/main/Docker-compose.yml"> Run the project using Docker </a> or 
         <a href="https://github.com/Ruqyai/Tuwaiq_Academy/blob/main/Jupyter/Colab/Final_Project_on_Colab.ipynb">
         <img src="https://colab.research.google.com/assets/colab-badge.svg"></a>
         </td>
