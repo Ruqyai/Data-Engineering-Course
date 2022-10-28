@@ -7,10 +7,10 @@ import json
 import re
 
 #--------Twitter credentials-------------
-consumer_key = 'qDP3ASTL1gmqlxqdH91Fxn0ER'
-consumer_secret = 'lWmEF44DNvQcpetXrC7AGnqmYNLjnjDqdZpzvdHjP8sVFPvmbT'
-access_token = '2308975692-vvaS0lfNd72sNHOiWlpHOaOQQGgIMsvskCbgTpB'
-access_token_secret = 'bkVUsfzgDq5I8RxTz0DdY1ZMkst5ofki1u0KnJolM1YGS'
+consumer_key = '' # put your twitter consumer key
+consumer_secret = '' # put your twitter consumer secret
+access_token = '' # put your twitter access token
+access_token_secret = '' # put your twitter access token secret
 
 #------------To conncet to Kafka Producer ---------
 topic_name = 'Tuwaiq'
